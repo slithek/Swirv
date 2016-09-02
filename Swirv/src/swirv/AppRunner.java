@@ -30,8 +30,8 @@ import javafx.scene.paint.Color;
 
 public class AppRunner extends Application {
 
-	public static final int width = 500;
-	public static final int height = 500;
+	public static final int width = 500;  //TODO:	Need to fix some issues that prevent dimension
+	public static final int height = 500; //		adjustments.
 	public static final int CDFE = (int)((50.0/1080.0)*width); //Circle Distance From Edge
 	
 	public static void main(String[] args) {
