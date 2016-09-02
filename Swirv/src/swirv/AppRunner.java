@@ -341,39 +341,41 @@ public class AppRunner extends Application {
 		stage.show();
 	}
 	
-	private int getHighScore(int score) {
-		boolean newHighScore = false;
-		int newHigh = 0;
-		int oldHigh = 0;
-		File file = new File("highscore");
-		try {
-	    	BufferedReader reader = new BufferedReader(new FileReader(file));
-	        String line = reader.readLine();
-	        int highScore = Integer.parseInt(line.trim());
-	        if (score > highScore) { 
-	        	newHigh = score;
-	        	newHighScore = true;
-	        } else {
-	        	oldHigh = highScore;
-	        }
-	        reader.close();
-		} catch (IOException ex) {
-	    	System.err.println("Error reading score from file..."+ex.toString());
-		}
-
-		if (newHighScore) {    
-			try {
-				
-				BufferedWriter output = new BufferedWriter(new FileWriter(file, false));
-				output.write("" + score);
-				output.close();
-			} catch (IOException ex1) {
-				System.out.printf("Error writing score to file: %s\n", ex1);
-			}
-			return score;
-		} else {
-			return oldHigh;
-		}
-	}
+	//THIS IS WHERE I ATTEMPTED TO IMPLEMENT A HIGH SCORE MECHANISM LOL
+	
+//	private int getHighScore(int score) {
+//		boolean newHighScore = false;
+//		int newHigh = 0;
+//		int oldHigh = 0;
+//		File file = new File("highscore");
+//		try {
+//	    	BufferedReader reader = new BufferedReader(new FileReader(file));
+//	        String line = reader.readLine();
+//	        int highScore = Integer.parseInt(line.trim());
+//	        if (score > highScore) { 
+//	        	newHigh = score;
+//	        	newHighScore = true;
+//	        } else {
+//	        	oldHigh = highScore;
+//	        }
+//	        reader.close();
+//		} catch (IOException ex) {
+//	    	System.err.println("Error reading score from file..."+ex.toString());
+//		}
+//
+//		if (newHighScore) {    
+//			try {
+//				
+//				BufferedWriter output = new BufferedWriter(new FileWriter(file, false));
+//				output.write("" + score);
+//				output.close();
+//			} catch (IOException ex1) {
+//				System.out.printf("Error writing score to file: %s\n", ex1);
+//			}
+//			return score;
+//		} else {
+//			return oldHigh;
+//		}
+//	}
 
 }
